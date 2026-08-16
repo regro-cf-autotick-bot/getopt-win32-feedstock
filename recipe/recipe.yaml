@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: getopt-win32
-  version: 0.1
+  version: "1.0"
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  url: https://github.com/libimobiledevice-win32/getopt/archive/${{ version }}.tar.gz
-  sha256: 7e9653ecd58ce4149959bf6a905f4ab2f7889856fe1218afbf84284074f9e549
+  url: https://github.com/libimobiledevice-win32/getopt/archive/v${{ version }}.tar.gz
+  sha256: fdf7c7b9c12b38d1de0d6e4945b635a0e4ede10e5640007b2c8c0deaf1738957
   patches:
     # https://github.com/libimobiledevice-win32/getopt/pull/3
     # https://github.com/libimobiledevice-win32/getopt/pull/1
@@ -18,7 +18,7 @@ source:
     - 0001-inject-cmake-project.patch
 
 build:
-  number: 3
+  number: 0
   skip: not win
   script:
     - cmake %CMAKE_ARGS% -S . -B build
